@@ -1,130 +1,155 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#10251d">
-  <meta name="description" content="A quick-start and maintenance guide for your air purifier.">
-  <title>Air Purifier | User Guide</title>
-  <style>
-    :root{--ink:#17251f;--muted:#64736b;--green:#237a50;--mint:#e9f5ed;--line:#e4ebe6;--paper:#f7faf7;--white:#fff}
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    a{color:inherit} .wrap{width:min(1100px,calc(100% - 40px));margin:auto}
-    header{background:#10251d;color:#fff;padding:18px 0}
-    .nav{display:flex;justify-content:space-between;align-items:center;gap:20px}
-    .brand{font-weight:800;letter-spacing:.04em}.brand span{color:#8bd4a6}
-    nav{display:flex;gap:20px;flex-wrap:wrap;font-size:.9rem}nav a{text-decoration:none;color:#d5e6dc}
-    .hero{background:linear-gradient(125deg,#10251d,#1d563c);color:#fff;padding:76px 0 68px}
-    .eyebrow{color:#9ce0b3;text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;font-weight:800}
-    h1{font-size:clamp(2.5rem,6vw,4.7rem);line-height:1.04;letter-spacing:-.045em;max-width:720px;margin:14px 0 18px}
-    .hero p{color:#d9e9df;max-width:620px;font-size:1.1rem;margin:0}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-    .btn{display:inline-block;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:750;background:#a9e4ba;color:#123323}
-    .btn.secondary{background:transparent;border:1px solid #709783;color:#fff}
-    main{padding:48px 0 70px}.section-head{margin-bottom:22px}
-    h2{font-size:clamp(1.7rem,3vw,2.35rem);letter-spacing:-.03em;margin:0 0 8px}
-    .lead{color:var(--muted);margin:0;max-width:700px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0 54px}
-    .card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 8px 24px #183b2410}
-    .icon{width:42px;height:42px;border-radius:13px;background:var(--mint);display:grid;place-items:center;color:var(--green);font-size:1.25rem;margin-bottom:14px}
-    h3{margin:0 0 8px;font-size:1.08rem}.card p{margin:0;color:var(--muted);font-size:.95rem}
-    .aqi{display:grid;grid-template-columns:1.05fr 1fr;gap:22px;align-items:center;background:#10251d;color:#fff;border-radius:24px;padding:28px;margin:24px 0 54px}
-    .screen{background:#050908;border:5px solid #28352e;border-radius:22px;padding:25px;text-align:center;max-width:330px;margin:auto;width:100%;box-shadow:inset 0 0 25px #000}
-    .screen small{color:#b9c9c0;letter-spacing:.12em}.number{font-size:4.5rem;line-height:1.1;font-weight:800;margin:5px 0}
-    .good{color:#46d879;font-weight:800}.scale{height:9px;border-radius:9px;background:linear-gradient(90deg,#2ecc71 0 25%,#f1c40f 25% 50%,#f39c12 50% 75%,#e74c3c 75%);margin:18px 0 8px}
-    .aqi-copy p{color:#d1e0d7}.legend{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:15px}
-    .legend span{font-size:.88rem;color:#e4eee8}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px}
-    .steps{counter-reset:step;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:22px 0 54px}
-    .step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 20px 20px 64px;position:relative}
-    .step:before{counter-increment:step;content:counter(step);position:absolute;left:20px;top:20px;width:30px;height:30px;border-radius:50%;background:var(--mint);color:var(--green);font-weight:800;display:grid;place-items:center}
-    .step p{margin:0;color:var(--muted);font-size:.94rem}
-    .notice{border-left:4px solid #d8a83d;background:#fff8e9;padding:16px 18px;border-radius:0 12px 12px 0;color:#604b20;margin:18px 0 54px}
-    .faq{border-top:1px solid var(--line)}details{padding:17px 0;border-bottom:1px solid var(--line)}summary{font-weight:750;cursor:pointer}details p{color:var(--muted);margin:10px 0 0}
-    footer{background:#10251d;color:#d2e1d8;padding:26px 0;font-size:.9rem}
-    @media(max-width:760px){nav{display:none}.grid{grid-template-columns:1fr}.aqi{grid-template-columns:1fr;padding:22px}.steps{grid-template-columns:1fr}.hero{padding:58px 0}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101d1b">
+<title>MESSAIR — Product User Guide</title>
+<style>
+:root{--bg:#f4f6f2;--paper:#fff;--ink:#17231f;--muted:#66736d;--dark:#101d1b;--dark2:#1b302a;--green:#3bc77b;--lime:#c4d879;--line:#e0e7e1;--soft:#eaf4ed;--amber:#f0bd54}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+header{background:var(--dark);color:#f5faf6;position:sticky;top:0;z-index:10;border-bottom:1px solid #ffffff18}
+.nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.logo{font-weight:950;letter-spacing:.14em;font-size:1.1rem}.logo span{color:var(--green)}
+.nav small{display:block;color:#9aaca3;font-size:.65rem;letter-spacing:.12em;font-weight:600;margin-top:-4px}
+nav{display:flex;gap:19px;flex-wrap:wrap;font-size:.84rem}nav a{text-decoration:none;color:#d3dfd8}nav a:hover{color:var(--green)}
+.hero{background:radial-gradient(circle at 75% 25%,#29463a 0,#1b302a 35%,#101d1b 75%);color:white;padding:68px 0 72px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px}
+.kicker{color:var(--lime);font-size:.73rem;font-weight:850;letter-spacing:.19em;text-transform:uppercase}
+h1{font-size:clamp(3rem,6vw,5.4rem);line-height:.94;letter-spacing:-.065em;margin:15px 0 20px}
+.hero p{max-width:590px;color:#d2ded7;font-size:1.08rem;margin:0}
+.hero .tagline{color:#9eb4a8;font-size:.86rem;margin-top:18px}
+.hero-art{background:#fff;border-radius:28px;padding:18px;box-shadow:0 25px 80px #0006;transform:rotate(1deg)}
+.hero-art img{display:block;width:100%;max-height:380px;object-fit:contain}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+.btn{display:inline-block;text-decoration:none;background:var(--green);color:#082117;padding:12px 18px;border-radius:999px;font-weight:850;font-size:.9rem}
+.btn.outline{background:transparent;color:white;border:1px solid #6d8b7b}
+main{padding:52px 0 76px}.section{margin-bottom:60px;scroll-margin-top:90px}
+.section-top{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}
+.eyebrow{color:#39845b;font-weight:850;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase}
+h2{font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-.045em;line-height:1.1;margin:5px 0 8px}
+.lead{margin:0;color:var(--muted);max-width:720px}
+.pill{display:inline-flex;padding:6px 11px;border-radius:999px;background:var(--soft);color:#267449;font-size:.75rem;font-weight:800;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:21px;box-shadow:0 8px 22px #15291b08}
+.card .num{width:36px;height:36px;display:grid;place-items:center;background:var(--soft);color:#247849;border-radius:11px;font-weight:900;margin-bottom:13px}
+.card h3{font-size:1.03rem;margin:0 0 6px}.card p{font-size:.91rem;color:var(--muted);margin:0}
+.dark-panel{background:var(--dark);color:white;border-radius:24px;padding:28px}
+.dark-panel p{color:#c6d5cc}.dark-panel h2{color:white}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
+.flow-item{background:#1b302a;border:1px solid #3b594b;border-radius:15px;padding:17px}
+.flow-item b{display:block;color:var(--lime);font-size:.72rem;letter-spacing:.1em;margin-bottom:8px}
+.flow-item h3{font-size:1rem;margin:0 0 6px}.flow-item p{font-size:.86rem;margin:0;color:#bdcdc4}
+.display-panel{display:grid;grid-template-columns:.8fr 1.2fr;gap:26px;align-items:center;background:#101d1b;color:white;padding:27px;border-radius:24px}
+.mock-screen{max-width:280px;width:100%;margin:auto;border:5px solid #33483d;background:#030806;border-radius:22px;padding:23px;text-align:center;box-shadow:inset 0 0 24px #000}
+.mock-screen small{font-size:.67rem;letter-spacing:.15em;color:#a8b9af}.mock-num{font-size:4.4rem;line-height:1.15;font-weight:900;margin:5px 0}.mock-good{color:#44dd82;font-weight:900}
+.gauge{height:8px;border-radius:9px;background:linear-gradient(90deg,#2ecc71 0 25%,#f1c40f 25% 50%,#f39c12 50% 75%,#e74c3c 75%);margin:18px 0 8px}
+.display-copy p{color:#c8d8ce}.legend{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}.legend span{font-size:.88rem;color:#e2ece5}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px}
+.steps{counter-reset:step;display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.step{position:relative;background:white;border:1px solid var(--line);border-radius:16px;padding:19px 20px 19px 65px}
+.step:before{counter-increment:step;content:counter(step);position:absolute;left:19px;top:18px;width:31px;height:31px;display:grid;place-items:center;border-radius:50%;background:var(--soft);color:#267849;font-weight:900}
+.step h3{font-size:1rem;margin:0 0 5px}.step p{font-size:.9rem;color:var(--muted);margin:0}
+.feature-layout{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.feature-box{background:white;border:1px solid var(--line);border-radius:18px;padding:22px}
+.feature-box h3{margin:0 0 8px}.feature-box p{margin:0;color:var(--muted);font-size:.92rem}
+.callout{background:#fff6e5;border-left:4px solid var(--amber);border-radius:0 13px 13px 0;padding:15px 18px;color:#665126;font-size:.9rem;margin-top:18px}
+.specs{width:100%;border-collapse:collapse;border-radius:16px;overflow:hidden;background:white;border:1px solid var(--line);margin-top:20px}
+.specs th,.specs td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:.91rem}
+.specs th{background:#eaf3eb;width:32%;color:#244b35}.specs tr:last-child th,.specs tr:last-child td{border-bottom:0}
+details{border-bottom:1px solid var(--line);padding:16px 0}summary{font-weight:800;cursor:pointer}details p{margin:8px 0 0;color:var(--muted)}
+footer{background:var(--dark);color:#d2dfd7;padding:26px 0;font-size:.87rem}.foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media(max-width:820px){nav{display:none}.hero-grid,.display-panel,.feature-layout{grid-template-columns:1fr}.hero-art{max-width:440px;margin:auto}.flow{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.wrap{width:calc(100% - 28px)}.hero{padding:48px 0}.grid,.steps,.flow{grid-template-columns:1fr}.section-top{display:block}.pill{margin-top:10px}.dark-panel,.display-panel{padding:19px}.specs th,.specs td{padding:10px;font-size:.84rem}}
+</style>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <div class="brand">PURE<span>AIR</span> / GUIDE</div>
-    <nav aria-label="Main navigation">
-      <a href="#aqi">AQI display</a><a href="#use">How to use</a><a href="#care">Maintenance</a><a href="#help">Help</a>
-    </nav>
-  </div>
-</header>
-<section class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Your quick-start guide</div>
-    <h1>Breathe easier.<br>Know your air.</h1>
-    <p>A simple guide to using your air purifier, understanding its air-quality display and keeping it in good condition.</p>
-    <div class="hero-actions">
-      <a class="btn" href="#use">Get started</a>
-      <a class="btn secondary" href="#aqi">Understand the AQI screen</a>
-    </div>
-  </div>
-</section>
+<header><div class="wrap nav"><div><div class="logo">MESS<span>AIR</span></div><small>HOSTEL DINING ROOM AIR PURIFIER</small></div><nav><a href="#overview">Overview</a><a href="#controls">Controls</a><a href="#aqi">AQI display</a><a href="#cleaning">Cleaning</a><a href="#safety">Safety</a></nav></div></header>
+
+<section class="hero"><div class="wrap hero-grid"><div>
+<div class="kicker">Product user guide · Quick reference</div>
+<h1>Cleaner air.<br>Smarter mess.</h1>
+<p>Welcome to MESSAIR — a mobile hybrid air purifier designed for the demanding air conditions of hostel dining rooms, where cooking grease, fine particles, steam and food odours mix.</p>
+<div class="hero-actions"><a class="btn" href="#operate">Start using MESSAIR</a><a class="btn outline" href="#cleaning">Maintenance guide</a></div>
+<div class="tagline">A staff-friendly guide to operation, status indicators and routine care.</div>
+</div><div class="hero-art"><img src="assets/messair-front-render.png" alt="MESSAIR mobile air purifier, front product render"></div></div></section>
+
 <main class="wrap">
-  <section>
-    <div class="section-head"><h2>Meet your air purifier</h2><p class="lead">Designed to draw in surrounding air, pass it through its filtration system and circulate treated air back into the room.</p></div>
-    <div class="grid">
-      <article class="card"><div class="icon">↗</div><h3>Air intake</h3><p>Keep the air-intake area clear. Avoid placing the purifier directly against curtains, walls or furniture.</p></article>
-      <article class="card"><div class="icon">◉</div><h3>Filtration</h3><p>Air passes through the installed filter assembly. Use only the filter type specified for your prototype.</p></article>
-      <article class="card"><div class="icon">〰</div><h3>Clean-air outlet</h3><p>Allow space around the outlet so the airflow can circulate freely through the room.</p></article>
-    </div>
-  </section>
+<section class="section" id="overview"><div class="section-top"><div><div class="eyebrow">01 · Product overview</div><h2>Meet MESSAIR</h2><p class="lead">A waist-height, mobile purifier concept designed specifically for hostel messes and institutional dining spaces.</p></div><span class="pill">Designed for shared spaces</span></div>
+<div class="grid">
+<article class="card"><div class="num">01</div><h3>Mobile, compact body</h3><p>Move the purifier into position using its top handle. Lock the caster wheels with the foot brakes before operation.</p></article>
+<article class="card"><div class="num">02</div><h3>Low-level air intake</h3><p>Front intake louvers draw in air close to the floor, where heavier food aerosols and dust can collect. Keep the grille unobstructed.</p></article>
+<article class="card"><div class="num">03</div><h3>Ceiling-directed outlet</h3><p>The curved upper outlet is designed to guide treated air along the ceiling, helping avoid a strong direct draft at table level.</p></article>
+</div></section>
 
-  <section id="aqi">
-    <div class="section-head"><h2>Understanding the AQI display</h2><p class="lead">The screen gives you a quick indication of the air-quality reading reported by the purifier's sensor.</p></div>
-    <div class="aqi">
-      <div class="screen" aria-label="Illustrative AQI display showing 42, Good">
-        <small>AIR QUALITY INDEX</small><div class="number">42</div><div class="good">● GOOD</div>
-        <div class="scale"></div><small>ILLUSTRATIVE READING</small>
-      </div>
-      <div class="aqi-copy">
-        <h2 style="font-size:1.8rem">What do the colours mean?</h2>
-        <p>The exact AQI bands depend on the scale and sensor calibration used in your device. The colours below are a simple visual guide; refer to your selected AQI standard for exact ranges.</p>
-        <div class="legend">
-          <span><i class="dot" style="background:#2ecc71"></i>Green — Good</span>
-          <span><i class="dot" style="background:#f1c40f"></i>Yellow — Moderate</span>
-          <span><i class="dot" style="background:#f39c12"></i>Orange — Poor</span>
-          <span><i class="dot" style="background:#e74c3c"></i>Red — Very poor</span>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="section"><div class="section-top"><div><div class="eyebrow">02 · Inside the system</div><h2>How the 4-stage cascade works</h2><p class="lead">MESSAIR combines physical separation, electrostatic collection, humidity conditioning and odour treatment.</p></div></div>
+<div class="dark-panel"><div class="flow">
+<div class="flow-item"><b>STAGE 01</b><h3>Cyclone separation</h3><p>A high-speed vortex separates heavier grease droplets and food dust by centrifugal force. The separated material falls into the lower sump.</p></div>
+<div class="flow-item"><b>STAGE 02</b><h3>Wet electrostatic collection</h3><p>Ionising wires charge fine smoke particles. Hydrophobic collector plates attract and capture the charged particles.</p></div>
+<div class="flow-item"><b>STAGE 03</b><h3>PTC dehumidification</h3><p>A PTC heater gently warms the air by a design target of around 2–4 °C to help reduce moisture before the carbon bed.</p></div>
+<div class="flow-item"><b>STAGE 04</b><h3>Odour treatment</h3><p>A 254 nm UV-C / TiO₂ photocatalytic module is paired with activated carbon to target odour-causing compounds and residual VOCs.</p></div>
+</div></div></section>
 
-  <section id="use">
-    <div class="section-head"><h2>How to use it</h2><p class="lead">Follow these basic steps whenever you operate the purifier.</p></div>
-    <div class="steps">
-      <article class="step"><h3>Choose a suitable location</h3><p>Place the unit on a stable, level surface with clear space around the air intake and outlet.</p></article>
-      <article class="step"><h3>Check the filter</h3><p>Before switching on, make sure the filter is correctly installed and access panels are closed.</p></article>
-      <article class="step"><h3>Power on</h3><p>Connect the device to its rated power source and switch it on using the designated control.</p></article>
-      <article class="step"><h3>Monitor the display</h3><p>Allow the sensor time to take a reading. Check the AQI value and colour indicator periodically.</p></article>
-    </div>
-  </section>
+<section class="section" id="controls"><div class="section-top"><div><div class="eyebrow">03 · User interface</div><h2>Know the controls & features</h2><p class="lead">The front is intended for everyday user interaction. Rear service controls are reserved for trained mess or maintenance staff.</p></div></div>
+<div class="grid">
+<article class="card"><div class="num">A</div><h3>Front light ring</h3><p>The circular indicator gives a quick visual status cue. Use the AQI screen reading for the displayed air-quality value.</p></article>
+<article class="card"><div class="num">B</div><h3>Power button</h3><p>Use the designated front power control to switch the purifier on or off. Do not unplug by pulling the cable.</p></article>
+<article class="card"><div class="num">C</div><h3>Touchscreen / status panel</h3><p>Displays the air-quality information and device status. The screen is intended to be tamper-resistant during busy meal periods.</p></article>
+<article class="card"><div class="num">D</div><h3>Top handle</h3><p>Use the handle to guide the unit while moving it. Do not lift or carry the purifier by the handle unless the final build is rated for lifting.</p></article>
+<article class="card"><div class="num">E</div><h3>Pull-out oil drawer</h3><p>The lower drawer collects separated grease. It is designed to slide out for quick emptying without opening the main body.</p></article>
+<article class="card"><div class="num">F</div><h3>Rear service features</h3><p>Rear features include the touch-wash control, scent cartridge access, cord hooks and service access. Keep these areas for staff use.</p></article>
+</div></section>
 
-  <section id="care">
-    <div class="section-head"><h2>Cleaning & maintenance</h2><p class="lead">Regular care helps maintain airflow and keeps the purifier ready for use.</p></div>
-    <div class="grid">
-      <article class="card"><div class="icon">✦</div><h3>Outer surface</h3><p>Switch off and unplug the unit before wiping the exterior with a soft, dry or slightly damp cloth. Keep water away from electrical parts.</p></article>
-      <article class="card"><div class="icon">▤</div><h3>Filter care</h3><p>Inspect and clean or replace the filter only as recommended for the specific filter material. Do not wash a filter unless it is explicitly washable.</p></article>
-      <article class="card"><div class="icon">▱</div><h3>Removable collection tray</h3><p>If your model uses the removable tray at the lower-right side, switch off the unit, slide the tray out carefully, empty and clean it, dry it fully, then reinstall it.</p></article>
-    </div>
-    <div class="notice"><strong>Safety first:</strong> Always disconnect power before cleaning or opening a service panel. Never operate the purifier with a wet collection tray, missing filter or exposed electrical components.</div>
-  </section>
+<section class="section" id="aqi"><div class="section-top"><div><div class="eyebrow">04 · Air quality display</div><h2>Read the AQI screen</h2><p class="lead">The front display helps users understand the reported air-quality condition at a glance.</p></div><span class="pill">Illustrative screen</span></div>
+<div class="display-panel"><div class="mock-screen"><small>AIR QUALITY INDEX</small><div class="mock-num">42</div><div class="mock-good">● GOOD</div><div class="gauge"></div><small>SAMPLE DISPLAY ONLY</small></div><div class="display-copy"><h2 style="font-size:1.8rem">Traffic-light indication</h2><p>The colour indicator is a quick visual cue. The number shown is an example, not a live measurement. Exact numeric bands depend on the AQI standard and sensor calibration selected for the final product.</p><div class="legend"><span><i class="dot" style="background:#2ecc71"></i>Green — Good</span><span><i class="dot" style="background:#f1c40f"></i>Yellow — Moderate</span><span><i class="dot" style="background:#f39c12"></i>Orange — Poor</span><span><i class="dot" style="background:#e74c3c"></i>Red — Very poor</span></div></div></div></section>
 
-  <section id="help">
-    <div class="section-head"><h2>Quick help</h2><p class="lead">A few checks for common issues.</p></div>
-    <div class="faq">
-      <details><summary>The AQI value does not change</summary><p>Check that the sensor inlet is not blocked and that the device has had time to sample the surrounding air. Confirm the sensor is connected correctly.</p></details>
-      <details><summary>Airflow seems weak</summary><p>Switch off and unplug the unit. Check for blocked intake or outlet openings and inspect the filter for dust or incorrect installation.</p></details>
-      <details><summary>The display does not turn on</summary><p>Check the power connection and rated supply. If the display remains off, disconnect the unit and inspect the wiring or seek qualified assistance.</p></details>
-      <details><summary>When should I replace the filter?</summary><p>Follow the filter manufacturer's service interval and inspect it regularly. Replacement frequency depends on filter type, usage and surrounding air conditions.</p></details>
-    </div>
-  </section>
+<section class="section" id="operate"><div class="section-top"><div><div class="eyebrow">05 · Everyday use</div><h2>Operating MESSAIR</h2><p class="lead">Follow this quick routine when positioning the purifier in a dining hall.</p></div></div>
+<div class="steps">
+<article class="step"><h3>Move into position</h3><p>Use the top handle to guide the unit to its designated location. Keep it clear of dining tables, walkways and kitchen equipment.</p></article>
+<article class="step"><h3>Lock the wheels</h3><p>Press the caster foot brakes so the purifier stays stationary while running.</p></article>
+<article class="step"><h3>Check the intake and outlet</h3><p>Make sure the front intake louvers and upper outlet are not blocked by walls, bags, curtains or stored items.</p></article>
+<article class="step"><h3>Power on</h3><p>Use the front power button. Allow the air-quality sensor time to settle, then check the AQI screen and status ring.</p></article>
+<article class="step"><h3>Keep the cord safe</h3><p>Route the power cord away from walkways. Use the rear cord hooks when the purifier is parked or stored.</p></article>
+<article class="step"><h3>After use</h3><p>Switch off using the front control. Follow the staff maintenance routine for the oil drawer and any scheduled cleaning cycle.</p></article>
+</div></section>
+
+<section class="section" id="cleaning"><div class="section-top"><div><div class="eyebrow">06 · Maintenance</div><h2>Keep the collection system clean</h2><p class="lead">MESSAIR is designed to reduce routine consumable replacement through reusable collection components and an off-peak cleaning concept.</p></div></div>
+<div class="feature-layout">
+<div class="feature-box"><h3>Pull-out oil drawer · routine staff task</h3><p>1. Switch off the purifier.<br>2. Pull the lower drawer out slowly using its handle.<br>3. Empty collected grease into the designated waste container.<br>4. Wipe the drawer clean and dry it completely.<br>5. Slide it fully back into place before restarting.</p></div>
+<div class="feature-box"><h3>Automated ESP wash · scheduled service</h3><p>The concept includes an off-peak hot-water backwash to rinse collected grease from the hydrophobic collector plates. The wash function and rear touch control should be operated only under the approved staff procedure for the final prototype.</p></div>
+<div class="feature-box"><h3>Exterior & louvers</h3><p>Switch off and unplug before wiping the outer panels. Use a soft cloth. Keep water away from the display, controls, cable entry and electrical openings. Do not poke objects through the louvers.</p></div>
+<div class="feature-box"><h3>Scent cartridge</h3><p>If the optional scent-vapour cartridge is installed, replacement should be handled by authorised staff using the specified cartridge. Do not pour fragrance liquid into the purifier.</p></div>
+</div>
+<div class="callout"><strong>Important:</strong> The self-cleaning cycle is a designed feature, not a reason to skip inspection. Confirm that the drawer is empty, correctly seated and dry. Follow the final prototype's maintenance schedule.</div></section>
+
+<section class="section" id="safety"><div class="section-top"><div><div class="eyebrow">07 · Safety</div><h2>Important safety instructions</h2><p class="lead">MESSAIR combines moving airflow components, electrical controls, an electrostatic collector and a UV-C treatment module.</p></div></div>
+<div class="grid">
+<article class="card"><div class="num">!</div><h3>Electrical safety</h3><p>Do not operate with a damaged cable or plug. Disconnect power before cleaning the exterior or handling the oil drawer.</p></article>
+<article class="card"><div class="num">!</div><h3>Do not open the machine</h3><p>High-voltage ESP parts, UV-C components, heater and fan are for authorised service personnel only. Never bypass covers or interlocks.</p></article>
+<article class="card"><div class="num">!</div><h3>Water & hot surfaces</h3><p>Do not hose down the purifier or pour water into it. Allow service personnel to manage the hot-water wash and heater components.</p></article>
+</div>
+<div class="callout"><strong>Prototype note:</strong> This guide describes the MESSAIR design concept. Before real-world operation, validate electrical protection, UV-C shielding, high-voltage isolation, wash-cycle interlocks, water ingress protection and the final AQI calibration. Use the approved operating procedure for the built unit.</div>
+</section>
+
+<section class="section" id="specs"><div class="section-top"><div><div class="eyebrow">08 · At a glance</div><h2>Product reference</h2><p class="lead">Key design targets from the MESSAIR concept presentation.</p></div></div>
+<table class="specs">
+<tr><th>Product</th><td>MESSAIR — mobile cyclonic-electrostatic hybrid air purifier</td></tr>
+<tr><th>Intended setting</th><td>Hostel messes and institutional dining rooms</td></tr>
+<tr><th>Form factor</th><td>Waist-height compact mobile unit</td></tr>
+<tr><th>Target airflow</th><td>1200+ m³/h CADR (design target; verify by testing)</td></tr>
+<tr><th>Primary stages</th><td>Cyclone separation, wet ESP, PTC dehumidification, UV-C / TiO₂ and activated carbon</td></tr>
+<tr><th>Grease handling</th><td>Bottom sump and front slide-out oil drawer</td></tr>
+<tr><th>Maintenance concept</th><td>Off-peak automated hot-water backwash for ESP collector plates</td></tr>
+<tr><th>Mobility</th><td>Top handle, caster wheels and foot brakes</td></tr>
+</table></section>
+
+<section class="section"><div class="section-top"><div><div class="eyebrow">09 · Quick help</div><h2>Troubleshooting</h2></div></div>
+<details><summary>The AQI value is not changing</summary><p>Check that the sensor opening is not blocked. Give the sensor time to take a reading. If it remains unchanged, report it to the maintenance team.</p></details>
+<details><summary>Airflow feels weak</summary><p>Check that the intake louvers and outlet are clear and that the oil drawer is fully seated. Do not open the internal fan or filter compartments yourself.</p></details>
+<details><summary>The oil drawer is difficult to slide</summary><p>Switch off the unit. Check for an obstruction or misalignment. Do not force the drawer; ask staff to inspect the slide mechanism.</p></details>
+<details><summary>The display or power control is unresponsive</summary><p>Check the external power connection if safe to do so. If the problem continues, switch off at the supply and contact authorised maintenance staff.</p></details>
+<details><summary>When should the internal plates be cleaned?</summary><p>Follow the service interval and cleaning-cycle instructions established for the final prototype. Internal ESP servicing must be performed by trained personnel.</p></details>
+</section>
 </main>
-<footer><div class="wrap">AIR PURIFIER USER GUIDE · Keep this guide handy for setup, operation and routine care.</div></footer>
-</body>
-</html>
+<footer><div class="wrap foot"><span><strong>MESSAIR</strong> · Hostel Dining Room Air Quality Management</span><span>Product user guide · Design prototype</span></div></footer>
+</body></html>
